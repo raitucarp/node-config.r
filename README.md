@@ -56,7 +56,7 @@ Say you have multiple configuration
 
 You can load by this way:
 ```JavaScript
-var config = require('config.r').load(database, production');
+var config = require('config.r').load('database, production');
 
 /* prints your database configuration */
 console.log(config.get('database'));
