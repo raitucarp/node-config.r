@@ -1,0 +1,26 @@
+{
+  "name": "config.r",
+  "version": "0.0.1",
+  "description": "lightweight configuration for node.js",
+  "main": "index.js",
+  "dependencies": {
+    "underscore": "~1.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raitucarp/node-config.r.git"
+  },
+  "keywords": [
+    "config",
+    "configuration"
+  ],
+  "author": "Ribhararnus Pracutiar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raitucarp/node-config.r/issues"
+  }
+}
