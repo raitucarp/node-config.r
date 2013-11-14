@@ -8,24 +8,24 @@
     npm install config.r
 
 Create config.json in your project directory, for example:
-
+```JSON
     {
        "superAdmin": {
           "username": "admin",
           "password": "93kanaeiapkPDFN" 
        }
     }
-
+```
 and then, you can load your config in this way:
-    
+```JavaScript
     var config = require('config.r');
     
     console.log(config.get());
-
+```
 # Advance usage #
 
 Get single config value from nested data, for example I have this config:
-
+```JSON
     {
        "message": {
           "error" : {
@@ -35,14 +35,14 @@ Get single config value from nested data, for example I have this config:
        }
 
     }
-
+```
 You can get the value of message error login in safe way:
+```JavaScript
+	var config = require('config.r');
 
-    var config = require('config.r');
-    
-    var error = config.get('error'); // it will display all error config
-    var error_login = config.get('error.login'); // it will display single config
-
+	var error = config.get('error'); // it will display all error config
+	var error_login = config.get('error.login'); // it will display single config
+```
 ## Load multiple config ##
 
 Say you have multiple configuration
@@ -55,15 +55,15 @@ Say you have multiple configuration
     /app.js
 
 You can load by this way:
+```JavaScript
+var config = require('config.r').load(database, production');
 
-    var config = require('config.r').load(database, production');
+/* prints your database configuration */
+console.log(config.get('database'));
 
-    /* prints your database configuration */
-    console.log(config.get('database'));
-
-    /* prints your production configuration */
-    console.log(config.get('production'));
-
+/* prints your production configuration */
+console.log(config.get('production'));
+```
 note: your default prefix config name is config.***name***.json
 
 ## Load from different path: ##
@@ -75,18 +75,18 @@ You can load from different directory, say you have directory named config:
     /config
     /app.js
     
-Use dir:
-
+Use path:
+```JavaScript
 	var config = require('config.r').path('config').load('database');
-    
+	/* log database */
 	console.log(config.get('database'));
-
+```
 
 ## Set different prefix ##
 ```JavaScript
-    var config = require('config.r').prefix('c').load('database');
-    
-    console.log(config.get('database'));
+	var config = require('config.r').prefix('c').load('database');
+
+	console.log(config.get('database'));
 ```
 
 your config files must have prefix c:
