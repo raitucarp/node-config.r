@@ -96,3 +96,8 @@ your config files must have prefix c:
     /c.json
     /c.database.json
 
+# todo#
+
+- add grunt.js for automaton
+- add unit testing
+- add several method, extends underscore.js to find parent node of current config
