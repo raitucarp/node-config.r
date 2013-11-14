@@ -1,6 +1,6 @@
 {
   "name": "config.r",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "lightweight configuration for node.js",
   "main": "index.js",
   "dependencies": {
@@ -18,7 +18,11 @@
     "config",
     "configuration"
   ],
-  "author": "Ribhararnus Pracutiar",
+  "homepage": "https://github.com/raitucarp/node-config.r",
+  "author": {
+	"name" : "Ribhararnus Pracutiar",
+	"email": "ribhararnus.pracutiar@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/raitucarp/node-config.r/issues"
