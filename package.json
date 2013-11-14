@@ -1,6 +1,6 @@
 {
   "name": "config.r",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "lightweight configuration for node.js",
   "main": "index.js",
   "dependencies": {
