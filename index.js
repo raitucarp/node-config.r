@@ -5,12 +5,13 @@ var __parentDir = path.dirname(module.parent.filename);
 
 var configr = function () {
 	this.$path = '';
-	this.init();
+	this.prefix('config');
+	this.path('');
 };
 
 configr.prototype.init = function () {
 	this.data = {};
-	var configName = '/config.json',
+	var configName = '/' + this.$prefix +'.json',
         data, _path, x;
     if (this.$path !== '') {
 		_path = path.resolve(__parentDir, this.$path);
@@ -42,7 +43,7 @@ configr.prototype.load = function (name) {
 		if (name.hasOwnProperty(n)) {
 			var _name = name[n].replace(/^\s+|\s+$/g, '');
 			this.data[_name] = {};
-			var configName = '/config.' + _name + '.json',
+			var configName = '/' + this.$prefix + '.' + _name + '.json',
 				data, x;
 			try {
 				data = require(_path + configName);
@@ -85,6 +86,12 @@ configr.prototype.get = function (name) {
 
 configr.prototype.path = function (_path) {
 	this.$path = _path;
+	this.init();
+	return this;
+};
+
+configr.prototype.prefix = function (prefix) {
+	this.$prefix = prefix;
 	this.init();
 	return this;
 };
