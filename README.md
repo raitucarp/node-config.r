@@ -76,16 +76,18 @@ You can load from different directory, say you have directory named config:
     /app.js
     
 Use dir:
+
+	var config = require('config.r').path('config').load('database');
     
-    var config = require('config.r').path('config').load('database');
-    
-    console.log(config.get('database'));
+	console.log(config.get('database'));
+
 
 ## Set different prefix ##
-    
+```JavaScript
     var config = require('config.r').prefix('c').load('database');
     
     console.log(config.get('database'));
+```
 
 your config files must have prefix c:
 
