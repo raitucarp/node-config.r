@@ -1,7 +1,7 @@
 var fs   = require('fs'),
     path = require('path'),
     _    = require('underscore');
-var __parentDir = path.dirname(module.parent.filename);
+var __parentDir = path.dirname(process.mainModule.filename);
 
 var configr = function () {
 	this.$path = '';
